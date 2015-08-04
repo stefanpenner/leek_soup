@@ -1,0 +1,6 @@
+<button class="btn btn-lg btn-default smhw-dropdown-btn" {{action "toggleMenu"}}>
+  {{title}} <i class="{{if isOpen 'ti-angle-up' 'ti-angle-down'}}"></i>
+</button>
+<div class="smhw-dropdown-menu {{if isOpen '' 'hidden'}}">
+  {{yield}}
+</div>

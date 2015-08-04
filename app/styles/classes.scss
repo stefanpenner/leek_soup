@@ -1,0 +1,24 @@
+.classes-homeworks-list-table {
+  .actions {
+    white-space: nowrap;
+  }
+}
+
+.class-homework-list-placeholder {
+  position: relative;
+
+  table {
+    opacity: 0.1;
+  }
+
+  .homework-list-overlay {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 100;
+
+    .btn {
+      font-size: 22px;
+    }
+  }
+}

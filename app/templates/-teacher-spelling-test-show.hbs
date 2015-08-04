@@ -1,0 +1,48 @@
+<div class="container-fluid main-content differentiated-homeworks">
+  <div class="row">
+    <div class="col-md-18">
+      <p><strong>{{t 'shared.homeworkView.taskDescription'}}</strong></p>
+
+      {{assignment-teacher-text model=model}}
+
+      {{assignment-dates model=model}}
+
+      <p class="homework-description margin-bottom">{{{model.description}}}</p>
+
+      {{#each model.trays as |tray|}}
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="gray-lighter">
+                {{tray.title}}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each tray.tasks as |task|}}
+              <tr>
+                  <td>
+                    <p>
+                      <strong>{{task.text}}</strong>
+                    </p>
+                    {{#if task.definition}}
+                      <br>
+                      <p>
+                        <strong>{{t 'spellingTests.definitionHeader'}}</strong> {{{task.definition}}}
+                      </p>
+                    {{/if}}
+                    {{#if task.sentence}}
+                      <br>
+                      <p>
+                        <strong>{{t 'spellingTests.sentenceHeader'}}</strong> {{task.sentence}}
+                      </p>
+                    {{/if}}
+                  </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{/each}}
+    </div>
+  </div>
+</div>

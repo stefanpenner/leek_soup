@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-18">
+    <input type="submit" class="btn btn-success submit-homework" value="{{t 'shared.publishAssignment'}}" disabled={{saveDisabled}}>
+    {{#if model.isDraft}}
+      <button class="btn btn-default" {{action "saveAsDraft" model}} disabled={{saveDisabled}}>{{t 'shared.saveAsDraft'}}</button>
+    {{/if}}
+  </div>
+</div>

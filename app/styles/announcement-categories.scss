@@ -1,0 +1,28 @@
+.admin{
+  &.announcement-categories{
+    .form-inline{
+      .form-group{
+        &.input{
+          width: 240px;
+          margin-right: 10px;
+          .title, input{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .table{
+      tr{
+        th{
+          width: 50%;
+          &.second{
+            width: 40%;
+          }
+          &.last{
+            width: 10%;
+          }
+        }
+      }
+    }
+  }
+}

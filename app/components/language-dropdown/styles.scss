@@ -1,0 +1,12 @@
+& {
+  display: inline-block;
+  vertical-align: middle;
+
+  .select2-container {
+    height: 35px;
+    .select2-choice {
+      height: inherit;
+      border-color: #5897fb;
+    }
+  }
+}

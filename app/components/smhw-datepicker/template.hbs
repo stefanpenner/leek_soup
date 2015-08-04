@@ -1,0 +1,15 @@
+{{#if labelText}}
+  <label for={{ attribute }} class="control-label u-margin-Txxs">{{translatedLabelText}}</label>
+{{/if}}
+<div class="form-group">
+  <div class="input-group">
+    {{bootstrap-datepicker value=date todayHighlight=todayHighlight class="form-control smhw-bootstrap-datepicker" autoclose=true format=format weekStart=weekStart}}
+    <div class="smhw input-group-addon icon-container" {{action "focusInput"}}>
+      <i class="smhw calendar-icon ti-calendar"></i>
+    </div>
+  </div>
+</div>
+{{#each errors as |error|}}
+  <label class="control-label u-margin-Txxs error-message" for={{attribute}}>{{t-error error}}</label>
+{{/each}}
+

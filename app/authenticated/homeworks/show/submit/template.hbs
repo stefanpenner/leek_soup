@@ -1,0 +1,27 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="col-md-18">
+      <p><strong>{{t 'homeworks.submit.title'}}</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-18">
+      <form role="form" {{action 'saveRecord' submissionVersion on="submit"}}>
+        <div class="form-group">
+          {{rich-text-editor value=submissionVersion.completeOnlineText minHeight=300}}
+        </div>
+
+        <div>
+          <label for="attached-file">Attach files (optional)</label>
+          <p>You can attach files up to 25 MB in size.</p>
+          {{smhw-file-upload collection=submissionVersion.attachments}}
+        </div>
+
+        <hr />
+
+        <input type="submit" class="btn btn-success" value="Submit assignment to teacher">
+      </form>
+    </div>
+  </div>
+</div>

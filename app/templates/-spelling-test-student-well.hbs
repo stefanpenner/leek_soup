@@ -1,0 +1,48 @@
+<div class="container-fluid main-content spelling-tests">
+  <div class="row">
+    <div class="col-md-18">
+      <div class="well text-center">
+        <h3>{{model.subject}}</h3>
+        <h3>{{model.title}}</h3>
+        <p>
+          <div class="spelling-tests color-box"></div>
+          {{model.teacher.title}} {{model.teacher.surname}} {{t 'shared.setHomework'}} {{model.classGroup.classYear}}/{{model.classGroup.name}} - {{model.subject}}
+        </p>
+        <div class="instructions">
+          <ul class="list">
+            <li>{{t 'spellingTests.play.firstInstruction'}}</li>
+            <li>{{t 'spellingTests.play.secondInstruction'}}</li>
+          </ul>
+        </div>
+        <br>
+        <p class="homework-description">{{{model.description}}}</p>
+        <br>
+        {{#if model.submissions.firstObject.isFinished}}
+          <div class="btn spelling-test-btn play-practice-spelling-btn right-btn-container">
+            {{#link-to 'authenticated.spelling-tests.show.results'}}
+              {{t 'spellingTests.play.viewResults'}}
+            {{/link-to}}
+          </div>
+        {{else}}
+          <div class="start-spelling-container text-center">
+            <div class="btn-container">
+              <div class="btn btn-default spelling-test-btn play-practice-spelling-btn">
+                {{#link-to 'authenticated.spelling-tests.show.index.practice-play' model}}
+                  {{t 'spellingTests.play.takePractice'}}
+                {{/link-to}}
+              </div>
+            </div>
+            <div class="btn-container">
+              <div class="btn play-spelling-btn right-btn-container">
+                {{#link-to 'authenticated.spelling-tests.show.index.play' model}}
+                  {{t 'spellingTests.play.takeTest'}}
+                {{/link-to}}
+              </div>
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{outlet}}
+</div>

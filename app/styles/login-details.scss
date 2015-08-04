@@ -1,0 +1,70 @@
+.login-details {
+  .panel-default {
+    .file-system-icon {
+      font-size: 47px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+  }
+
+  .login-details-progress {
+    position: relative;
+    margin: 35px 0 50px 0;
+
+    .step {
+      position: absolute;
+      z-index: 200;
+      top: -20px;
+
+      .step-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        text-align: center;
+        border-radius: 100%;
+        background-color: $white;
+        border: 5px solid #e6eaed;
+        margin-bottom: 8px;
+
+        &.active {
+          border-color: $brand-primary;
+        }
+      }
+
+      &.step-one {
+        .step-circle {
+          position: relative;
+          left: 35px;
+        }
+      }
+
+      &.step-three {
+        right: 0;
+
+        .step-circle {
+          position: relative;
+          margin: 0 auto;
+          margin-bottom: 8px;
+        }
+      }
+
+      &.step-two {
+        left: 40%;
+
+        .step-circle {
+          position: relative;
+          margin: 0 auto;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .progress {
+      height: 10px;
+      position: relative;
+      z-index: 1;
+      box-shadow: none;
+      background-color: #e6eaed;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<h4>{{{t 'login.pin.index.header'}}}</h4>
+<form id="pin-only-form" role="form" {{action "authenticateWithPin" pin on="submit"}}>
+  {{validated-input id="input-pin" inputClass="input-lg" model=this attribute="pin" value=pin placeholder=(t 'login.enterPin') pattern="[A-Za-z]\d{8}"}}
+  <div class="actions">
+    <button type="submit" class="btn btn-brand btn-lg {{if onAir 'loading'}}" disabled={{buttonDisabled}}>
+      {{unless onAir (t 'login.action')}}
+    </button>
+  </div>
+</form>

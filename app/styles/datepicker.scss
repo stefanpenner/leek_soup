@@ -1,0 +1,149 @@
+.datepicker {
+  border-radius: 2px;
+  padding: 0;
+  td, th {
+    border-radius: 0;
+    background-color: white;
+    min-width: 35px;
+  }
+  td.day:hover { background-color: $gray-light; }
+  td.active.day {
+    background-image: none;
+    &:hover { background-image: none; }
+  }
+  table tr td.day {
+    border-radius: 4px;
+    &.today:not(.active) {
+      background-image: none;
+      background-color: $gray-lighter;
+      &:hover {
+        background-image: none;
+        background-color: $gray-light;
+      }
+    }
+    &.active {
+      background-color: $brand-primary;
+    }
+  }
+}
+
+
+
+
+// .day.active {
+//   background-color: $brand-primary !important;
+//   background-image: none !important;
+//   background-repeat: no-repeat !important;
+//   color: white;
+//   border-color: transparent;
+// }
+
+// .smhw-calendar-datepicker {
+//   .form-group, .input-group {
+//     width: 100%;
+//   }
+
+//   .ti-calendar {
+//     position: absolute;
+//     top: 9px;
+//     right: 47px;
+//     z-index: 20;
+//     color: $brand-primary;
+//   }
+
+//   .smhw-bootstrap-datepicker-calendar {
+//     border: 0;
+//     box-shadow: none;
+//     width: 100%;
+//     text-align: center;
+//     font-size: $default-font-size !important;
+//   }
+// }
+
+
+
+
+// .datepicker{
+//   &.datepicker-dropdown{
+//     box-shadow: 2px 2px 1px rgba(148, 148, 148, 0.5);
+//     margin-top: 0;
+//     padding: 0 20px 10px 20px;
+//     &:before, &:after{
+//       display: none;
+//     }
+//     .table-condensed {
+//       thead{
+//         tr{
+//           &:first-child{
+//             border-bottom: 1px solid #ddd;
+//             background: #f5f5f5;
+//             height: 35px;
+//             th{
+//               &:first-child{
+//                 padding-left: 5px;
+//               }
+//               &:last-child{
+//                 padding-left: 5px;
+//               }
+//             }
+//           }
+//           th{
+//             color: #323232;
+//             font-weight: normal;
+//           }
+//         }
+//       }
+//       tbody{
+//         tr{
+//           td{
+//             &.day{
+//               padding: 7px 10px;
+//               color: #525252;
+//               &.old, &.new{
+//                 color: #C2C2C2;
+//               }
+//               &.range{
+//                 background: #eeeeee;
+//                 border-radius: 0;
+//               }
+//               &.active{
+//                 padding-left: 3px;
+//                 padding-right: 3px;
+//                 position: relative;
+//                 color: #FFF;
+//                 font-weight: bold;
+//                 &:after{
+//                   content: '';
+//                   width: 0;
+//                   height: 0;
+//                   border-style: solid;
+//                   border-color: transparent transparent transparent $gray-border;
+//                   position: absolute;
+//                   top: 0;
+//                 }
+//                 &:not(.end-date) {
+//                   border-top-right-radius: 0;
+//                   border-bottom-right-radius: 0;
+//                   &:after{
+//                     border-width: 16px 0 16px 7px;
+//                     border-color: transparent transparent transparent $gray-border;
+//                     right: -7px;
+//                   }
+//                 }
+//                 &.end-date {
+//                   border-top-left-radius: 0;
+//                   border-bottom-left-radius: 0;
+//                   &:after{
+//                     border-color: transparent $gray-border transparent transparent;
+//                     border-width: 16px 7px 16px 0;
+//                     left: -7px;
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

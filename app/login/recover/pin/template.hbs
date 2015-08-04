@@ -1,0 +1,20 @@
+<form id="phone-pin-form" role="form" {{action "requestVerificationCode" phone on="submit"}}>
+  <div class="form-group {{if errors.phone 'has-error'}}">
+    <div class="input-group">
+      <span class="input-group-addon">+44</span>
+      {{input type="tel" class="form-control input-lg" id="recover-form-phone" value=phone placeholder=(t 'login.enterMobile')}}
+    </div>
+    {{validation-errors errors=errors.phone}}
+  </div>
+  <div class="actions">
+    <button type="submit" class="btn btn-brand btn-lg {{if onAir 'loading'}}" disabled={{buttonDisabled}}>
+      {{unless onAir (t 'login.recover.pin.action')}}
+    </button>
+  </div>
+</form>
+<p>
+  <i class="ti-info-alt brand-primary-text"></i>
+  {{t 'login.recover.pin.explanation'}}
+</p>
+<hr>
+<p>{{link-to (t 'login.recover.pin.emailRecoverLink') 'login.recover'}}</p>

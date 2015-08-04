@@ -1,0 +1,24 @@
+$submissions-list-width: 44.4444444%;
+$border-color: #cdd1da;
+
+& {
+  margin-top: 20px;
+}
+
+.submissions-list {
+  width: $submissions-list-width;
+  float: left;
+  margin-bottom: 0;
+  list-style: none;
+  border-top: 1px solid $border-color;
+  ul{
+    padding-left: 0;
+  }
+}
+
+.submissions-detail-panel {
+  float: left;
+  width: 100% - $submissions-list-width;
+  padding: 15px 5px 0 15px;
+  border-top: 1px solid $border-color;
+}

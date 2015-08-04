@@ -1,0 +1,13 @@
+.popular-assignments-container {
+  table {
+    width: 100%;
+    td:last-child { text-align: right; }
+  }
+  .assignment-info { max-width: 0; /* Trick to allow ellipsis in a table cell */ }
+  .truncate-text { display: block; }
+  .assignment-actions { width: 90px; }
+}
+
+.homework-submission-type {
+  margin-bottom: 10px;
+}

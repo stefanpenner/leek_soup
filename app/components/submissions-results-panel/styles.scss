@@ -1,0 +1,19 @@
+.class-average {
+  margin: 30px 0;
+  display: flex;
+  .left-block, .right-block {
+    flex: 1
+  }
+  header{
+    color: $brand-primary;
+  }
+  .left-block {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  .right-block {
+    color: $brand-primary;
+    font-size: 70px;
+    line-height: 50px;
+  }
+}

@@ -1,0 +1,102 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0,0,0, 0.5);
+}
+.icon{
+  &.blue{
+    color: $white;
+    background-color: $brand-primary;
+    border-radius: 15px;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+
+.right-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #e8e8e8;
+  width: 290px;
+  z-index: 1001;
+  min-height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+
+  .validated-multiple-select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .right-sidebar-header {
+    padding: 12px;
+    background-color: #e1e1e1;
+
+    h4 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #323232;
+    }
+
+    p {
+      font-size: 13px;
+      max-width: 220px;
+    }
+
+    label {
+      font-weight: normal;
+    }
+  }
+
+  .right-sidebar-body {
+    padding: 15px 12px;
+
+    .redactor-box {
+      background-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .redactor-editor {
+      padding: 10px;
+      background-color: $white;
+    }
+
+    p, a {
+      font-size: 13px;
+    }
+
+    label {
+      &.radio-button{
+        margin-right: 10px;
+        font-weight: normal;
+        color: #656D78;
+        input{
+          margin-right: 5px;
+        }
+      }
+    }
+
+    textarea {
+      resize: none;
+      margin-bottom: 20px;
+    }
+
+    .attach-files {
+      color: $brand-primary;
+      cursor: pointer;
+    }
+    .please-note {
+      margin: 5px 0 15px 0;
+      display: block;
+    }
+  }
+}

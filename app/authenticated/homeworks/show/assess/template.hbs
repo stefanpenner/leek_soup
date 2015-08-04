@@ -1,0 +1,17 @@
+<div class="container-fluid main-content scroll-inside">
+  {{#if model.submissions}}
+    <div class="row">
+      <div class="col-md-18">
+        {{#if model.handInOnline}}
+          <p><strong>Online submission</strong></p>
+        {{else}}
+          <p><strong>Class submission</strong></p>
+        {{/if}}
+        <p class='blurb-test'>Select a student below and update the status of their homework</p>
+      </div>
+    </div>
+    {{assess-panel assignment=model submissionIds=ids action="updateQueryParams"}}
+  {{else}}
+    <p>No submissions yet</p>
+  {{/if}}
+</div>

@@ -1,0 +1,36 @@
+{{#if isEmpty}}
+  <p><strong>Select a student for updating their status and grade</strong></p>
+  <p>
+    <strong>Did you know:</strong> You can also update more than one profile at a time by selecting multiple students. Simply hold the shift key and select the students you want to update.
+  </p>
+{{else}}
+  {{#if multipleSelection}}
+    <p><strong>You have selected {{selectedStudentsNamesSentence}}</strong></p>
+    <p>
+      Update status and homework grade of your chosen students in one easy step. You can even post a comment that will be added to the selected students' comment string.
+    </p>
+  {{/if}}
+
+  <div class="row">
+    <div class="col-md-6">
+      {{select-2 didSelect="updateSubmissionGrade" class="grade-select" content=grades value=grade.id optionValuePath="id" optionLabelPath="value" placeholder=grades.prompt}}
+    </div>
+    <div class="col-md-6">
+      {{select-2 didSelect="updateSubmissionStatus" class="status-select" content=submissionStatuses value=submissions.firstObject.status optionValuePath="id" optionLabelPath="label" placeholder=submissionStatuses.prompt}}
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-success btn-block" {{action 'toggleCommentsForm'}}>
+        <i class="ti-comment-alt"></i>
+        {{if showCommentsForm 'Hide comment' 'Add comment'}}
+      </button>
+    </div>
+  </div>
+
+  {{#if showCommentsForm}}
+    {{submission-comment-form submissions=submissions}}
+  {{/if}}
+
+  {{#unless multipleSelection}}
+    {{submission-activity-feed comments=comments events=events versions=versions}}
+  {{/unless}}
+{{/if}}

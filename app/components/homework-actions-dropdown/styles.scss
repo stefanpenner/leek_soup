@@ -1,0 +1,44 @@
+& {
+  position: relative;
+}
+
+.smhw-dropdown-menu {
+  display: block;
+  padding: 0px;
+  position: absolute;
+  box-shadow: 0px 0px 2px $gray;
+  border-color: 1px solid $gray;
+  background-color: white;
+  border-radius: 3px;
+  margin-top: 3px;
+  right: 0px;
+  z-index: 500;
+  .list-item {
+    padding: 10px;
+    border-radius: 3px;
+    min-width: 175px;
+    max-width: 175px;
+    min-height: 20px;
+    text-decoration: none;
+    i { vertical-align: middle; }
+
+    &:hover {
+      background-color: $brand-primary;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+.smhw-dropdown-btn {
+  background-color: white;
+  i { vertical-align: middle; }
+  &:hover { text-decoration: none; }
+  &:active { text-decoration: none;  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}

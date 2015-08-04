@@ -1,0 +1,292 @@
+$gray-border: #0E79C9;
+.panel.panel-report,
+.panel.panel-splash {
+  .panel-heading{
+    .percent-sortable{
+      width: 75%;
+      float: right;
+    }
+  }
+  &.no-side-border{
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+  .panel-body {
+    text-align: center;
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    .report-icon, .splash-icon {
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      color: $white;
+      background-color: $brand-primary;
+      margin: 0 auto;
+      border-radius: 10px;
+      font-size: 26px;
+      padding-top: 5px;
+    }
+  }
+
+  .panel-footer {
+    padding: 12px;
+    text-align: center;
+    background-color: #f5f7fa;
+  }
+}
+.margin-top-20{
+  margin-top: 20px;
+}
+.container-fluid.filter-top{
+  border-bottom: 1px solid $gray-light;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-left: 1px solid $gray-light;
+  .filter-bar.ember-view{
+    .select-2-wrapper{
+      width: 18%;
+      margin-right: 2%;
+      float: left;
+      &:nth-child(1){
+        width: 20%;
+      }
+      &:nth-child(5){
+        margin-right: 0;
+      }
+      .form-group{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.reports {
+  .get-letters{
+    border-radius: 4px;
+    border: 1px solid $gray-light;
+    padding: 15px;
+  }
+  .table{
+    &.parents-evening{
+      th{
+        width: 26%;
+        &.first{
+          width: 5%;
+        }
+        &.fourth{
+          width: 17%;
+        }
+        label{
+          font-weight: normal;
+        }
+      }
+    }
+    &.school-overview{
+      td{
+        width: 5%;
+        &.first{
+          width: 20%;
+        }
+        &.third{
+          width: 70%;
+        }
+        &.fourth{
+          color: $brand-primary;
+        }
+      }
+    }
+    &.homework-frequency{
+      td,th{
+        width: 7%;
+        text-align: center;
+        &.first{
+          text-align: left;
+          width: 20%;
+        }
+        &.twelfth{
+          width: 10%;
+        }
+      }
+      td{
+        &:last-child{
+          color: $brand-primary;
+        }
+      }
+    }
+    &.student-submissions{
+      th{
+        width: 11%;
+        &.fourth{
+          width: 23%;
+        }
+      }
+    }
+    &.tutors-report{
+      th{
+        width: 23%;
+        &.third{
+          width: 14%;
+        }
+        &.fourth{
+          width: 17%;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          padding: 15px;
+        }
+      }
+    }
+  }
+  .prog-bar-wrapper{
+    width: 100%;
+    border: 1px solid #F4F4F4;
+    box-shadow: inset 0px 1px 1px 0px rgba(186, 186, 186, 0.75);
+    background: #f9f9f9;
+    background: #e8e8e8;
+    background: linear-gradient(to bottom,  #e8e8e8 0%,#f9f9f9 38%,#f9f9f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#f9f9f9',GradientType=0 );
+  }
+  .prog-bar{
+    width:0;
+    height: 80%;
+    background: $brand-primary;
+    background: linear-gradient(to bottom, #208fe5 0%,#1e5799 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#208fe5', endColorstr='#1e5799',GradientType=0 );
+  }
+}
+.table{
+  thead{
+    tr{
+      &.v-align-middle{
+        th{
+          vertical-align: middle;
+        }
+      }
+      th{
+        color: $gray-dark;
+        font-weight: normal;
+        position: relative;
+        border-width: 1px;
+        padding: 15px;
+      }
+    }
+  }
+}
+.arrow{
+  position: relative;
+  &.arrow-down{
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid gray;
+      margin-top: -1px;
+      position: absolute;
+      right: -10px;
+      bottom: 6px;
+    }
+  }
+  &.arrow-up{
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 4px solid gray;
+      position: absolute;
+      margin-top: -1px;
+      right: -10px;
+      bottom: 6px;
+    }
+  }
+  &.arrow-both{
+    &:after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 4px solid gray;
+      position: absolute;
+      right: -12px;
+      bottom: 9px;
+    }
+  }
+  &.arrow-both{
+    &:before{
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid gray;
+      position: absolute;
+      right: -12px;
+      bottom: 3px;
+    }
+  }
+}
+
+.checkbox-wrapper{
+  position: relative;
+  float: left;
+  margin-right: 30px;
+  label{
+    margin-left: 25px;
+    line-height: 30px;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+  [type="checkbox"].smhw-checkbox:not(:checked),
+  [type="checkbox"].smhw-checkbox:checked {
+    display:none;
+  }
+
+  [type="checkbox"].smhw-checkbox:not(:checked) + label.smhw-checkbox-label:before,
+  [type="checkbox"].smhw-checkbox:checked + label.smhw-checkbox-label:before {
+    content: '';
+    position: absolute;
+    left:0;
+    top: 6px;
+    width: 17px; height: 17px;
+    border: 1px solid #aaa;
+    background: #fff;
+  }
+
+  [type="checkbox"].smhw-checkbox:checked + label.smhw-checkbox-label:before {
+    border: 1px solid $brand-primary;
+  }
+
+  [type="checkbox"].smhw-checkbox:not(:checked) + label.smhw-checkbox-label:after,
+  [type="checkbox"].smhw-checkbox:checked + label.smhw-checkbox-label:after {
+    font-family: 'FontAwesome';
+    content: '\e051';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    font-size: 10px;
+    color: #FFF;
+    transition: all .2s;
+  }
+
+  [type="checkbox"].smhw-checkbox:not(:checked) + label.smhw-checkbox-label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  [type="checkbox"].smhw-checkbox:checked + label.smhw-checkbox-label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  [type="checkbox"].smhw-checkbox:checked + label.smhw-checkbox-label:before {
+    background: $brand-primary;
+  }
+}

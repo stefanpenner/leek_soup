@@ -1,0 +1,32 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <header class="menu-toggle">
+      <i class="ti-menu"></i>
+    </header>
+    <div class="profile">
+      {{user-profile-picture user=currentUser}}
+      <div class="profile-name">
+        {{{t 'sideBar.welcome' forename=currentUser.forename}}}
+        <br>
+        <a href="#">{{t 'sideBar.editProfile'}}</a>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div id="page-content-wrapper">
+    <nav class="blue-nav">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="pull-right">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    {{outlet}}
+  </div>
+</div>

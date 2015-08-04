@@ -1,0 +1,11 @@
+machine:
+  node:
+    version: 0.12.2
+dependencies:
+  pre:
+    - npm install -g npm@2.10.1
+    - npm install node-sass@2.0.1
+    - npm install -g bower
+  override:
+    - npm install
+    - bower i

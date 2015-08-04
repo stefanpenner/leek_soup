@@ -1,0 +1,30 @@
+{{main-header title=model.title}}
+<div class="tab-container">
+  <ul class="tabs">
+    <li>{{#link-to 'authenticated.homeworks.show.index'}}{{t 'shared.description'}}{{/link-to}}</li>
+    {{#if (can "see authenticated.homeworks.show.assess" model)}}
+      <li>{{#link-to 'authenticated.homeworks.show.assess'}}{{t 'shared.assess'}}{{/link-to}}</li>
+    {{/if}}
+    {{#if (can "see authenticated.homeworks.show.results" model)}}
+      <li>{{#link-to 'authenticated.homeworks.show.results'}}{{t 'shared.results'}}{{/link-to}}</li>
+    {{/if}}
+    {{#if (can "see authenticated.homeworks.show.submit" model)}}
+      {{#if model.handInOnline}}
+        <li>{{#link-to 'authenticated.homeworks.show.submit'}}{{t 'shared.submit'}}{{/link-to}}</li>
+      {{/if}}
+    {{/if}}
+  </ul>
+  {{#if (can 'edit this homework in authenticated' model)}}
+    <div class="dropdown-container float-right">
+      {{#homework-actions-dropdown title=(t 'shared.actions')}}
+        <div class="list-item">
+          {{#link-to 'authenticated.homeworks.edit' model}}
+            <i class="ti-pencil"></i>
+            {{t 'shared.editHomework'}}
+          {{/link-to}}
+        </div>
+      {{/homework-actions-dropdown}}
+    </div>
+  {{/if}}
+</div>
+{{outlet}}

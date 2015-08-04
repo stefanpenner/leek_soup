@@ -1,0 +1,13 @@
+<div class="col-md-11">
+  {{#bread-crumbs tagName="ol" outputStyle="bootstrap" linkable=true as |component crumb|}}
+    {{#if (eq crumb.title 'Authenticated')}}
+      <i class="ti-home"></i>
+    {{else}}
+      {{crumb.title}}
+    {{/if}}
+  {{/bread-crumbs}}
+  <h1 class="main-header-title truncate-text">{{title}}</h1>
+</div>
+<div class="col-md-7">
+  {{yield}}
+</div>

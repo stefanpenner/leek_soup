@@ -1,0 +1,40 @@
+<section class="blue-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">{{t 'mainNav.openingHours'}}</div>
+      <div class="col-md-9">
+        <div class="pull-right">
+          {{language-dropdown}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'home' classNames='navbar-brand'}}
+        <img src="/images/smhw-logo-blue.png" />
+        <span class="brand-name">Show My Homework</span>
+      {{/link-to}}
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'product'}}{{t 'mainNav.learnMore'}}{{/link-to}}</li>
+        <li>{{#link-to 'teacher-resources'}}{{t 'mainNav.teacherResources'}}{{/link-to}}</li>
+        <li><a href="https://showmyhomework.zendesk.com/hc/en-gb" target="blank">{{t 'mainNav.support'}}</a></li>
+      </ul>
+      <div class="pull-right">
+        {{#link-to 'login' class='btn btn-default'}}{{t 'mainNav.login'}}{{/link-to}}
+        {{#link-to 'sign-up' class='btn btn-orange'}}{{t 'mainNav.teacherSignUp'}}{{/link-to}}
+      </div>
+    </div>
+  </div>
+</nav>

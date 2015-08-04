@@ -1,0 +1,12 @@
+<div class="submissions-list">
+  <ul>
+    {{#each assignment.submissions as |submission|}}
+      {{submission-list-item submission=submission selectedIds=selectedIds action="submissionClicked"}}
+    {{/each}}
+  </ul>
+</div>
+{{#if canGrade}}
+  {{submissions-grading-panel submissions=selectedSubmissions assignment=assignment}}
+{{else}}
+  {{submissions-results-panel submissions=assignment.submissions selected=selectedSubmissions.firstObject trayId=trayId}}
+{{/if}}

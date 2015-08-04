@@ -1,0 +1,383 @@
+$dashboard-top-grid-cell-width: 300px;
+$dashboard-top-grid-cell-height: 130px;
+
+$cell-margin-horizontal: 10px;
+$cell-margin-vertical: 20px;
+$small-screen-width: 500px;
+
+.dashboard {
+  &.main-container {
+    background-color: $gray-lightest;
+  }
+
+  .empty-collection-placeholder-container {
+    padding: 10px;
+  }
+
+  .color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+  }
+
+  .header {
+    &.announcements {
+      border-color: $brand-info;
+      background-color: $brand-info;
+    }
+
+    &.events {
+      border-color: $events-color;
+      background-color: $events-color;
+    }
+
+    &.notifications {
+      border-color: $assignment-class-test;
+      background-color: $assignment-class-test;
+    }
+  }
+
+  .cell {
+    @media screen and(max-width: 500px) {
+      min-width: 100%;
+    }
+  }
+
+  .with-margin {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .one-third {
+    width: 33.3333%!important;
+    -webkit-box-flex: 0!important;
+    flex: none !important;
+  }
+
+  .one-fourth {
+    width: 25%!important;
+    -webkit-box-flex: 0!important;
+    flex: none !important;
+  }
+
+  .list-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+
+    &.announcements {
+      padding-left: 10px;
+      padding-top: 0px;
+    }
+
+    section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $gray;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .last-element {
+      padding: 10px;
+      float: right;
+      color: $brand-primary;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .announcement-container {
+      display: flex;
+
+      .date-container {
+        flex: 1;
+        .item {
+          width: 100%;
+          float: left;
+          color: $gray-darker;
+          font-weight: 300;
+          &.day {
+            font-size: 50px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+          }
+
+          &.week-day {
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .description {
+        width: 60% !important;
+        -webkit-box-flex: 0!important;
+        flex: none !important;
+        position: relative;
+
+        .teacher-name-footer {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      .number-day {
+        font-size: 50px;
+      }
+
+    }
+  }
+
+  .homework-container {
+    padding-left: 30px;
+    padding-top: 10px;
+
+    &.homework-set {
+      padding-left: 10px !important;
+    }
+
+    .set-homework-description {
+      margin-top: 5px;
+    }
+  }
+
+  .dashboard-homework-set {
+    .list-container {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  .features-section-grid {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+
+    .cell {
+      position: relative;
+      max-width: calc(33% - #{$cell-margin-horizontal * 2});
+      flex: 1;
+      min-width: 200px;
+
+      @media screen and(max-width: 700px) {
+        min-width: 100%;
+      }
+
+      height: $dashboard-top-grid-cell-height;
+      max-height: $dashboard-top-grid-cell-height;
+      margin-left: $cell-margin-horizontal;
+      margin-right: $cell-margin-horizontal;
+      margin-top: $cell-margin-vertical;
+      background-color: white;
+      box-shadow: 2px 2px 7px 0px $gray;
+      border-radius: 3px;
+      border-color: $gray-light;
+      border-width: 1px;
+      border-style: solid;
+
+      &.video-training {
+        background-color: $video-training-color;
+        border-color: $video-training-color;
+        color: white;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+
+        a {
+          text-decoration: none;
+          &:focus { text-decoration: none; }
+          &:hover { text-decoration: none; }
+        }
+
+        .cell-row {
+          display: flex;
+          justify-content: space-between;
+
+
+          .cell-row-element {
+            display: 1;
+
+            &.right { margin-left: 10px; }
+          }
+        }
+
+        .big-text {
+          font-size: 70px;
+          margin-top: -20px;
+          margin-right: 7px;
+          .mustard {
+            color: $mustard;
+          }
+        }
+
+        .header-title {
+
+          margin-top: -15px;
+          margin-left: 4px;
+          font-weight: bold;
+          font-size: 19px;
+        }
+
+        .content {
+          margin-left: 6px;
+        }
+
+        .small-text {
+          max-width: 100px;
+        }
+      }
+
+      &.feedback {
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        position: relative;
+      }
+
+      &.tutoring {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        position: relative;
+      }
+
+      &.trends {
+        position: relative;
+        padding: 10px;
+
+        .content {
+          max-width: 150px;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 0px;
+          height: 0px;
+          top: 20px;
+          right: -31px;
+          width: 130px;
+          height: 20px;
+          text-align: center;
+
+          -webkit-transform: rotateZ(45deg);
+          -moz-transform: rotateZ(45deg);
+
+          /* Rhombus */
+          border-width: 0 30px 30px 30px;
+          border-style: solid;
+          border-color: transparent transparent $brand-primary transparent;
+        }
+
+        &:after {
+          display: block;
+          position: absolute;
+          content: attr(data-title);
+          color: white;
+          top: 21px;
+          right: -35px;
+          width: 140px;
+          height: 28px;
+          padding-top: 5px;
+          background: transparent;
+          transform: rotateZ(45deg);
+          font-weight: bold;
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+
+      .comment-icon {
+        position: absolute;
+
+        &.small-dialogue {
+          transform: scale(-1, 1);
+          right: 4px;
+          bottom: 5px;
+          &:before { font-size: 30px; }
+        }
+
+        &.big-dialogue {
+        bottom: 1px;
+        right: 1px;
+        &:before { font-size: 50px; }
+        }
+      }
+    }
+  }
+
+  .homework-section-grid {
+    display: flex;
+    flex-flow: row wrap;
+
+    .header {
+      background-color: $header-bg-color;
+      color: $gray-darker;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid $gray;
+    }
+
+
+    .cell {
+      flex: 1;
+      background-color: white;
+      box-shadow: 2px 2px 7px 0px $gray;
+      border-radius: 3px;
+      border-color: $gray-light;
+      border-width: 1px;
+      border-style: solid;
+      margin-left: $cell-margin-horizontal;
+      margin-right: $cell-margin-horizontal;
+      margin-top: $cell-margin-vertical;
+      margin-top: 20px;
+      @media screen and(max-width: 700px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .notification-section-grid {
+    display: flex;
+    flex-flow: row wrap;
+
+    .cell {
+      flex: 1;
+      margin-top: $cell-margin-vertical;
+      margin-left: $cell-margin-horizontal;
+      margin-right: $cell-margin-horizontal;
+      box-shadow: 2px 2px 7px 0px $gray;
+      border-radius: 3px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $gray;
+
+      @media screen and(max-width: 1100px) and(min-width: #{$small-screen-width}) {
+        min-width: 50%;
+      }
+
+      @media screen and(max-width: 700px) {
+        min-width: 100%;
+      }
+
+
+      .header {
+        border-radius: 2px;
+        margin-bottom: 0px;
+      }
+    }
+    .header {
+      color: $gray-darker;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid $gray;
+    }
+  }
+}

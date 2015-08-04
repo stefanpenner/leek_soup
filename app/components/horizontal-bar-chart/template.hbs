@@ -1,0 +1,24 @@
+<div class="chart">
+  <div class="bars">
+    {{#each entries as |entry|}}
+      {{#horizontal-bar-chart/bar percentage=entry.percentage}}
+        {{yield entry}}
+      {{/horizontal-bar-chart/bar}}
+    {{/each}}
+  </div>
+</div>
+{{#if markers}}
+  <div class="x-axis">
+    <span class="marker">0</span>
+    <span class="marker">10</span>
+    <span class="marker">20</span>
+    <span class="marker">30</span>
+    <span class="marker">40</span>
+    <span class="marker">50</span>
+    <span class="marker">60</span>
+    <span class="marker">70</span>
+    <span class="marker">80</span>
+    <span class="marker">90</span>
+    <span class="marker">100</span>
+  </div>
+{{/if}}

@@ -1,0 +1,8 @@
+{{#if veryShort}}
+  <div class="bar very-short" style={{style}}></div>
+  <div class="bar-content">{{yield}}</div>
+{{else}}
+  <div class="bar" style={{style}}>
+    {{yield}}
+  </div>
+{{/if}}

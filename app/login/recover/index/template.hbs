@@ -1,0 +1,16 @@
+<form role="form" {{action "resetPassword" email on="submit"}}>
+  {{validated-input type='email' model=this attribute='email' inputClass='input-lg' id='recover-form-email' value=email placeholder=(t 'login.enterEmail')}}
+  <div class="actions">
+    <button type="submit" class="btn btn-brand btn-lg {{if onAir 'loading'}}" disabled={{buttonDisabled}}>
+      {{unless onAir (t 'login.recover.index.action')}}
+    </button>
+  </div>
+</form>
+<p>
+  <i class="ti-info-alt brand-primary-text"></i>
+  {{t 'login.recover.index.explanation'}}
+</p>
+<hr>
+<p>
+  {{link-to (t 'login.recover.index.pinRecoverLink') 'login.recover.pin'}}
+</p>

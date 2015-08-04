@@ -1,0 +1,66 @@
+.login-container {
+  margin: 0 auto;
+  @media (min-width: 600px) { max-width: 288px; }
+  @media (max-width: 600px) { padding: 0 10px; }
+  form { margin-bottom: 20px; }
+  a { text-decoration: none; }
+  header {
+    padding: 40px 0 20px 0;
+    img { margin-bottom: 10px; }
+  }
+  p { font-size: 13px; }
+  h4 { margin-bottom: 20px; }
+  .actions {
+    display: flex;
+    .btn {
+      padding-left: 9px;
+      padding-right: 9px;
+    }
+    > * {
+      flex: 1;
+      &:not(:first-child) {
+        margin-left: 10px
+      }
+    }
+  }
+  .forgot-password-link { line-height: 40px; }
+
+  .login-providers-buttons {
+    margin-bottom: 30px;
+    .btn { font-size: 12px; }
+  }
+
+  .form-group.has-error {
+    margin-bottom: 0;
+    .error-message {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#email-login-form {
+  margin-bottom: 50px;
+}
+#pin-login-form {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  .form-group {
+    margin-bottom: 0;
+  }
+  [type="submit"] {
+    $width: 66px;
+    width: $width;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    line-height: 1.32;
+    transition: transform 0.5s;
+    &:disabled {
+      transform: translateX($width);
+    }
+  }
+}

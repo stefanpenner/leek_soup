@@ -1,0 +1,13 @@
+<h4>{{{t 'login.pin.sent.header'}}}</h4>
+<p>{{t 'login.pin.sent.explanation'}}</p>
+<br>
+<form id="phone-pin-sent-form" role="form" {{action "authenticateWithPin" pin on="submit"}}>
+  {{validated-input id="sent-form-pin" inputClass="input-lg" model=this attribute="pin" value=pin placeholder=(t 'login.enterPin') pattern="[A-Za-z]\d{8}"}}
+  <div class="actions">
+    <button type="submit" class="btn btn-brand btn-lg {{if onAir 'loading'}}" disabled={{buttonDisabled}}>
+      {{unless onAir (t 'login.action')}}
+    </button>
+  </div>
+</form>
+<hr>
+{{#link-to 'login.recover.pin'}}<i class="ti-arrow-left"></i> {{t 'login.forgotPassword'}}{{/link-to}}

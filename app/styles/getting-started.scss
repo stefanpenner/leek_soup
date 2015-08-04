@@ -1,0 +1,117 @@
+.getting-started{
+  &.add-school-website{
+    .panel{
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      .arrows-wrapper{
+        position: absolute;
+        right: -50px;
+        top: -17px;
+        .large-arrow-right{
+          border-bottom: 2px solid $brand-primary;
+          width: 50px;
+          height: 35px;
+          display: block;
+          position: relative;
+          &:after{
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid #0E79C9;
+            position: absolute;
+            right: -10px;
+            bottom: -6px;
+            margin-top: -4px;
+          }
+        }
+      }
+    }
+    .list-wrapper{
+      ul{
+        list-style: none;
+        li{
+          line-height: 35px;
+        }
+      }
+    }
+    .logo{
+      display: block;
+      width: 150px;
+      margin: 20px 0;
+    }
+    .download-logo {
+      margin-bottom: 20px;
+    }
+    .copy-link{
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  .row{
+    &.leaflets-wrapper{
+      max-width: 850px;
+    }
+    .smhw-4-cols{
+      float: left;
+      width: 25%;
+      padding-left: 14px;
+      padding-right: 14px;
+      text-align: center;
+      h4{
+        color: #000;
+      }
+      h4, .btn-primary.btn{
+        margin-top: 20px;
+      }
+      .leaflet{
+        width: 100%;
+        border: 1px solid #cdd1da;
+        border-radius: 5px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      }
+    }
+    .panel.panel-splash {
+      p{
+        &.bottom{
+          margin-bottom: 4px;
+        }
+        &.tel-nr{
+          margin-bottom: 0;
+          font-size: 25px;
+          color: #0e79c9;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .getting-started{
+    .row{
+      .smhw-4-cols{
+        width: 50%;
+        margin-bottom: 40px;
+        h4, .btn-primary.btn{
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 320px) {
+  .getting-started{
+    .row{
+      .smhw-4-cols{
+        width: 100%;
+        float: none;
+        h4, .btn-primary.btn{
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

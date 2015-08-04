@@ -1,0 +1,18 @@
+& {
+  cursor: pointer;
+}
+
+.input-group-addon {
+  background-color: white;
+  color: $brand-primary;
+}
+
+&.active {
+  .input-group-addon {
+    background-color: $brand-primary;
+  }
+
+  .calendar-icon {
+    color: white;
+  }
+}

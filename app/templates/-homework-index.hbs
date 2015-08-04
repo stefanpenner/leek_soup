@@ -1,0 +1,50 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="col-md-18">
+      <p><strong>{{t 'shared.homeworkView.taskDescription'}}</strong></p>
+
+      {{assignment-teacher-text model=model}}
+
+      {{assignment-dates model=model}}
+
+      <p class="description">{{{model.description}}}</p>
+
+      <div class="well homework-information">
+        <p><strong>{{t 'homeworks.otherInformation'}}</strong></p>
+        <ul>
+          <li>{{t 'homeworks.homeworkDuration' duration=model.duration units=model.durationUnits}}</li>
+
+          {{#if (eq model.submissionType 'handInOnline')}}
+            <li>{{t 'homeworks.handInOnline' teacher=model.teacher.fullNameTitleInitial}}</li>
+          {{else if (eq model.submissionType 'classSubmission')}}
+            <li>{{t 'homeworks.handInClass' teacher=model.teacher.fullNameTitleInitial}}</li>
+          {{else if (eq model.submissionType 'Other')}}
+            <li>{{t 'homeworks.handInOther' teacher=model.teacher.fullNameTitleInitial thirdParty=model.thirdPartySubmission}}</li>
+          {{/if}}
+        </ul>
+      </div>
+
+      {{#if (or model.attachments model.webLinks)}}
+        <div class="well well-light">
+          <p><strong>{{t 'homeworks.resourcesHint'}}</strong></p>
+
+          {{#if model.attachments}}
+            <div class="attachment-list">
+              {{#each model.attachments as |attachment|}}
+                <a href="{{attachment.fileUrl}}"><i class="ti-file"></i> {{attachment.filename}}</a><br />
+              {{/each}}
+            </div>
+          {{/if}}
+
+          {{#if model.webLinks}}
+            <ul class="web-link-list">
+              {{#each model.webLinks as |webLink|}}
+                {{web-link webLink=webLink}}
+              {{/each}}
+            </ul>
+          {{/if}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="border-right col-md-12">
+      <form role="form" {{action 'saveRecord' model on="submit"}}>
+        {{partial "assignment-first-panel"}}
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.subjects optionValuePath="name" optionLabelPath="name" labelText="homeworks.subject.label" attribute="subject" class="homework-subject"}}
+          </div>
+          <div class="col-md-9">
+            {{validated-select model=model content=currentUser.classGroupsByYear optionValuePath="" optionLabelPath="name" labelText="homeworks.classGroup.label" attribute="allClassGroups" class="homework-class-group" multiple=model.isNew errors=model.errors.classGroup}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.schoolPrivateInfo.markingSchemesActive optionValuePath="" optionLabelPath="title" labelText="homeworks.markingScheme.label" attribute="markingScheme" class="homework-marking-scheme"}}
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-9">
+                {{smhw-datepicker model=model date=model.issuedOn labelText="classTests.issuedOn.label" attribute="issuedOn" startDate=startDate class="homework-due-on" }}
+              </div>
+              <div class="col-sm-9">
+                {{smhw-datepicker model=model date=model.dueOn labelText="classTests.dueOn.label" attribute="dueOn" dependantAttribute="issuedOn" class="homework-issued-on" }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="second-panel">
+          <label for="attached-file">{{t 'homeworks.attachments.label'}}</label>
+          <p>{{t 'homeworks.attachments.explanation'}}</p>
+          {{smhw-file-upload collection=model.attachments deleteAttachment=(unless model.isNew 'deleteAttachment')}}
+          {{weblinks-input model=model class="form-group"}}
+        </div>
+        <hr>
+        {{partial "assignment-submit" }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      {{popular-assignments type=model.type limit=5}}
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-18">
+    <div class="login-details-progress">
+      <div class="step step-one">
+        <div class="step-circle {{if stepOneActive 'active'}}">1</div>
+        <div class="step-text">{{t 'admin.loginDetails.stepOne'}}</div>
+      </div>
+
+      <div class="step step-two">
+        <div class="step-circle {{if stepTwoActive 'active'}}">2</div>
+        <div class="step-text">{{t 'admin.loginDetails.stepTwo'}}</div>
+      </div>
+
+      <div class="step step-three">
+        <div class="step-circle {{if stepThreeActive 'active'}}">3</div>
+        <div class="step-text">{{t 'admin.loginDetails.stepThree'}}</div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: {{width}};"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+.web-link-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    float: left;
+    padding: 20px 20px 0 0;
+
+    a {
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:focus {
+        text-decoration: none;
+        outline: 0;
+      }
+
+      .default-web-link-icon {
+        width: 150px;
+        height: 90px;
+        border: 5px solid $gray;
+        text-align: center;
+        font-size: 50px;
+        padding-top: 6px;
+        margin-bottom: 5px;
+
+        i {
+          color: $gray;
+        }
+      }
+
+      img {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.homework-date {
+  line-height: 14px;
+  text-align: center;
+
+  .large {
+    font-size: 36px;
+    line-height: 32px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .small {
+    font-size: 12px !important;
+  }
+
+  &.issued-date {
+    color: $brand-primary;
+  }
+
+  &.due-date {
+    color: $brand-danger;
+  }
+}
+
+.homework-information {
+  margin-top: 20px;
+
+  ul {
+    padding: 0 0 0 18px;
+    margin-bottom: 0;
+  }
+}

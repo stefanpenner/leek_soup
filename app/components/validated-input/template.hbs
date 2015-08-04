@@ -1,0 +1,5 @@
+{{#if labelText}}
+  <label for={{attribute}} class="control-label u-margin-Txxs">{{translatedLabelText}}</label>
+{{/if}}
+{{input value=value type=type placeholder=placeholder class=inputClasses disabled=disabled pattern=pattern}}
+{{validation-errors errors=errors}}

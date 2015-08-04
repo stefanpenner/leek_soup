@@ -1,0 +1,32 @@
+.assess-spelling-test-tabs {
+  .tabs-list {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  .tab-element {
+    background-color: $gray-light;
+    color: $brand-primary;
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid $gray-light;
+    border-bottom: none;
+    &:hover, &.active, &:focus {
+      text-decoration: none;
+    }
+    &.active {
+      background-color: white;
+      margin-bottom: 0px;
+      border-bottom: 1px solid white;
+      z-index: 1;
+      position: relative;
+      color: $gray-darker;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="col-md-18">
+      {{#if model.handInOnline}}
+        <p><strong>Online submission</strong></p>
+      {{else}}
+        <p><strong>Class submission</strong></p>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      {{student-submission-box assignment=model submission=submission}}
+    </div>
+    <div class="col-md-10">
+      {{submission-comment-form submissions=model.submissions}}
+
+      {{submission-activity-feed comments=submission.comments events=submission.events versions=submission.versions}}
+    </div>
+  </div>
+</div>

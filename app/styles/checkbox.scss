@@ -1,0 +1,92 @@
+.checkbox {
+  padding-left: 20px;
+  margin-top: 5px;
+
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid $gray;
+      background-color: $white;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: -20px;
+      padding-left: 3px;
+      padding-top: 1px;
+      font-size: 11px;
+      color: $white;
+    }
+  }
+
+  @mixin checkbox-checked {
+    &::before {
+      background-color: $brand-primary;
+      border: 0;
+    }
+
+    &::after {
+      font-family: 'themify';
+      content: '\e64c';
+      font-size: 13px;
+    }
+  }
+
+  &.checked label {
+    @include checkbox-checked;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    top: -4px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus + label::before {
+      outline: thin dotted;
+      background-color: $brand-primary;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+
+    &:checked:focus + label::before {
+      background-color: $white;
+      border-color: $gray;
+    }
+
+    &:checked + label {
+      @include checkbox-checked;
+    }
+
+    &:disabled + label {
+      opacity: 0.65;
+
+      &::before {
+        background-color: $gray-light;
+        border: 1px solid $gray;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

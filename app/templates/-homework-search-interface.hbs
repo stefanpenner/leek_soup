@@ -1,0 +1,43 @@
+{{#filter-bar containerClass='container-fluid'}}
+  <div class="filter-bar-element">
+    {{select-2 content=currentSchool.classYears value=class_year optionValuePath="name" optionLabelPath="name" placeholder="Select a year" allowClear=true}}
+  </div>
+  <div class="filter-bar-element">
+    {{select-2 content=assignmentTypes value=type optionValuePath="id" optionLabelPath="label" placeholder="Select a type" allowClear=true}}
+  </div>
+  <div class="filter-bar-element">
+    {{select-2 content=currentSchool.subjects value=subject optionValuePath="name" optionLabelPath="name" placeholder="Select a subject" allowClear=true}}
+  </div>
+  {{#if showTeacherFilter}}
+    <div class="filter-bar-element">
+      {{select-2 content=currentSchool.teachers value=teacher optionValuePath="id" optionLabelPath="fullNameTitleInitial" placeholder="Select a teacher" allowClear=true}}
+    </div>
+  {{/if}}
+  <div class="filter-bar-element">
+    {{input class="form-control filter-search" value=filter placeholder=(t 'shared.enterSearch')}}
+  </div>
+{{/filter-bar}}
+
+<div class="container-fluid main-content resources">
+  <div class="row">
+    <div class="col-md-18">
+      <p><strong>{{t 'resources.resourceArchive'}}</strong></p>
+      <p>{{t 'resources.homeworkDescription'}}</p>
+    </div>
+  </div>
+  <br>
+  {{#each assignmentsGroupedInRows as |row|}}
+    <div class="grid with-gutter">
+      {{#each row as |homework|}}
+        <div class="cell">
+          {{resources-homework-box homework=homework}}
+          <div class="additional-homework-information">
+            <p class="text-center">{{homework.teacher.title}} {{homework.teacher.fullName}} {{t 'resources.createdOn'}} {{moment homework.createdAt 'll'}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/each}}
+  <br>
+  {{pagination-links total=numberOfPages page=page}}
+</div>

@@ -1,0 +1,6 @@
+{{#if labelText}}
+  <label for={{ attribute }} class="control-label u-margin-Txxs">{{translatedLabelText}}</label>
+{{/if}}
+{{select-2 content=content value=value optionValuePath=optionValuePath optionLabelPath=optionLabelPath placeholder=placeholder searchEnabled=searchEnabled class=selectClass multiple=multiple}}
+{{validation-errors errors=errors}}
+

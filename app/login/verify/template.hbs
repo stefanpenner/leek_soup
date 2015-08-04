@@ -1,0 +1,12 @@
+<h4>{{{t 'login.verify.header'}}}</h4>
+<p>{{t 'login.verify.explanation'}}</p>
+<form id="login-verify-form" role="form" {{action "submitVerificationCode" code on="submit"}}>
+  {{validated-input type='text' model=this attribute='code' inputClass='input-lg' id='verification-code' value=code placeholder=(t 'login.enterVerification')}}
+  <div class="actions">
+    <button type="submit" class="btn btn-brand btn-lg {{if onAir 'loading'}}" disabled={{buttonDisabled}}>
+      {{unless onAir (t 'login.verify.action')}}
+    </button>
+  </div>
+</form>
+<hr>
+{{#link-to 'login.recover.pin'}}<i class="ti-arrow-left"></i> {{t 'login.goBackLink'}}{{/link-to}}

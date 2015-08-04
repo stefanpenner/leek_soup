@@ -1,0 +1,18 @@
+<div class="activity-feed-entry activity-feed-entry--form">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="activity-feed-entry-profile">
+        <i class="pe-7s-user" />
+      </div>
+    </div>
+    <div class="col-md-16">
+      <div class="activity-feed-entry-content">
+        <p><strong>Enter your comment below</strong></p>
+        {{textarea value=commentText class="form-control"}}
+        <button class="btn pull-right btn-success" type="submit" {{action 'submitComment'}} disabled={{emptyComment}}>
+          {{t 'activityFeed.postComment'}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

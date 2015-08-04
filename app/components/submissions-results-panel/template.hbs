@@ -1,0 +1,11 @@
+{{#if selected}}
+
+  {{#if isQuiz}}
+    {{quiz-submission/detail-panel selected=selected classAverage=averageGrade}}
+  {{else if isSpellingTest}}
+    {{spelling-test-submission/detail-panel trayId=trayId selected=selected classAverage=averageGrade}}
+  {{/if}}
+
+{{else}}
+  {{quiz-submission/overview-panel submissions=submissions averageGrade=averageGrade}}
+{{/if}}

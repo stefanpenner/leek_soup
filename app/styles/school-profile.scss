@@ -1,0 +1,42 @@
+.map-canvas {
+  width: 100%;
+  height: 320px;
+  margin-top: 50px;
+}
+
+.school-header {
+  border-bottom: 1px solid $gray;
+  padding-bottom: 7px;
+  height: 60px;
+
+  .row {
+    position: relative;
+  }
+
+  .school-logo {
+    padding: 10px;
+    position: absolute;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
+    top: -80px;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  h1 {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 17px;
+
+    small {
+      color: #666d77;
+    }
+  }
+}
+
+.school-info {
+  margin-top: 50px;
+
+  .btn {
+    font-size: 13px;
+  }
+}

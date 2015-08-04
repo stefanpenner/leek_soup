@@ -1,0 +1,10 @@
+<a href="{{webLink.url}}" target="_blank">
+  {{#if webLink.thumbUrl}}
+    <img src="{{webLink.thumbUrl}}" /><br />
+  {{else}}
+    <div class="default-web-link-icon">
+      <i class="ti-link" />
+    </div>
+  {{/if}}
+  {{webLink.url}}
+</a>

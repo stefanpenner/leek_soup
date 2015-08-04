@@ -1,0 +1,61 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="border-right col-md-12">
+      <form role="form" {{action 'saveRecord' model on="submit"}} class="differentiated-homeworks">
+        {{partial "assignment-first-panel"}}
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.subjects optionValuePath="name" optionLabelPath="name" labelText="homeworks.subject.label" attribute="subject" class="homework-subject"}}
+          </div>
+          <div class="col-md-9">
+            {{validated-select model=model content=currentUser.classGroupsByYear optionValuePath="" optionLabelPath="name" labelText="homeworks.classGroup.label" attribute="allClassGroups" class="homework-class-group" multiple=model.isNew errors=model.errors.classGroup}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.schoolPrivateInfo.markingSchemesActive optionValuePath="" optionLabelPath="title" labelText="homeworks.markingScheme.label" attribute="markingScheme" class="homework-marking-scheme"}}
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-9">
+                {{smhw-datepicker model=model date=model.issuedOn labelText="homeworks.issuedOn.label" attribute="issuedOn" startDate=startDate }}
+              </div>
+              <div class="col-sm-9">
+                {{smhw-datepicker model=model date=model.dueOn labelText="homeworks.dueOn.label" attribute="dueOn" dependantAttribute="issuedOn" }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            {{smhw-single-file-upload model=model labelText="backgroundPhoto.label" attribute-id="differentiated-homework-background-photo" startAction="startUpload" endAction="endUpload"}}
+            <p>{{t 'backgroundPhoto.supportText'}}</p>
+          </div>
+          <div class="col-md-9">
+            <div class="form-group">
+              <label class="control-label u-margin-Txxs">{{t "homeworks.submissions.label"}}</label>
+              <input class="form-control" type="text" value={{t 'differentiatedHomeworks.classSubmission'}} disabled=true>
+            </div>
+          </div>
+        </div>
+        <div class="tray-forms-container">
+          <div class="tray-forms">
+            <div class="tray-form-well">
+              <div class="triangle"></div>
+              <div class="description">
+                <p class="thick-font">{{t 'trayForms.headerTitle'}}</p>
+                <p>{{t 'trayForms.description'}}</p>
+              </div>
+            </div>
+            {{differentiated-hw-trays model=model selectedTray=selectedTray action="updateQueryParams" storeDeletedTask="storeDeletedTask"}}
+          </div>
+        </div>
+        <hr>
+        {{partial "assignment-submit" }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      {{popular-assignments type=model.type limit=5}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+& {
+  display: inline-block;
+  width: 100%;
+  margin: 15px 0;
+
+  .homework-date {
+    text-align: left;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: $white;
+
+    &.issued-on {
+      background-color: $brand-success;
+      margin-right: 10px;
+    }
+
+    &.due-on {
+      background-color: $brand-danger;
+    }
+  }
+}

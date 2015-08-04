@@ -1,0 +1,11 @@
+<input type="text" class="form-control input-lg" oninput={{action 'search' value="target.value"}} onkeydown={{action 'keypress'}} value={{value}} placeholder={{placeholder}}>
+{{#if schools.length}}
+  <ul class="suggestions">
+    {{#each schools as |school|}}
+      {{school-selector/suggestion school=school filter=filter active=(eq school activeSchool) onclick=(action 'select' school)}}
+    {{/each}}
+    <li class="suggestion create-school {{unless activeSchool 'active'}}" {{action 'select'}}>
+      <em>Create school</em> "{{value}}"
+    </li>
+  </ul>
+{{/if}}

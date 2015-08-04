@@ -1,0 +1,34 @@
+.has-error {
+  .input-group-addon {
+    color: white;
+  }
+
+  .with-highlighted-borders {
+    border-color: $brand-danger;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  }
+
+  .redactor-toolbar {
+    @extend .with-highlighted-borders;
+  }
+
+  .redactor-editor {
+    @extend .with-highlighted-borders;
+  }
+
+  .select2-choice {
+    @extend .with-highlighted-borders;
+  }
+
+  .select2-default {
+    @extend .with-highlighted-borders;
+  }
+
+  .select2-chosen {
+   @extend .with-highlighted-borders;
+  }
+
+  .select2-choices {
+    @extend .with-highlighted-borders;
+  }
+}

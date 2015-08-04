@@ -1,0 +1,27 @@
+$bar-height: 30px;
+.charts {
+  .chart .bar {
+    height: $bar-height;
+    line-height: $bar-height;
+
+    .score {
+      font-size: $bar-height / 2;
+    }
+
+    &:nth-child(1) {
+      .score { color: $brand-primary; }
+    }
+
+    &:nth-child(2) {
+      background-color: rgba($brand-primary, 0.25);
+      .legend { color: $gray-dark; }
+    }
+  }
+  .chart .bar-content {
+    line-height: $bar-height;
+  }
+
+  .attempt {
+    text-align: center;
+  }
+}

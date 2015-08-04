@@ -1,0 +1,30 @@
+{
+  "name": "smhw-frontend",
+  "dependencies": {
+    "ember": "components/ember#release",
+    "ember-cli-shims": "ember-cli/ember-cli-shims#0.0.3",
+    "ember-cli-test-loader": "ember-cli-test-loader#0.1.3",
+    "ember-data": "1.13.5",
+    "ember-load-initializers": "ember-cli/ember-load-initializers#0.1.5",
+    "ember-qunit": "0.4.6",
+    "ember-qunit-notifications": "0.0.7",
+    "ember-resolver": "~0.1.18",
+    "jquery": "^2.1.4",
+    "loader.js": "ember-cli/loader.js#3.2.0",
+    "qunit": "~1.18.0",
+    "ember-inflector": "~1.3.1",
+    "ember-cli-moment-shim": "~0.0.3",
+    "core.js": "~0.9.17",
+    "bootstrap-datepicker": "~1.4.0",
+    "polyfills-pkg": "~0.1.2",
+    "pretender": "~0.6.0",
+    "lodash": "~3.7.0",
+    "select2": "3.5.2",
+    "Faker": "~2.1.3",
+    "ember-simple-auth": "0.8.0"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.4",
+    "ember": "release"
+  }
+}

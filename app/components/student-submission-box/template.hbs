@@ -1,0 +1,15 @@
+<h4>Grade</h4>
+
+{{#if submission.grade}}
+  <div class="grade">{{submission.grade}}</div>
+  <p>A grade of <strong>{{submission.grade}}</strong> has been given to {{submission.student.forename}} for his work on the '{{assignment.title}}'</p>
+{{else}}
+  <div class="grade">-</div>
+  <p>The grade for this piece of homework will be applied shortly after its due date.</p>
+{{/if}}
+
+<p class="footer">
+Group <strong>{{assignment.classGroup.name}}</strong> <br />
+{{assignment.subject}} assignment <br/>
+Graded by <strong>{{assignment.teacher.fullNameTitleInitial}}</strong>
+</p>

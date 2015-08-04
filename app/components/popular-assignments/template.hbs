@@ -1,0 +1,21 @@
+{{#if assignments.length}}
+  <header><strong>{{t "popularAssignments.header" limit=limit}}</strong></header>
+  <hr>
+  <table>
+    <tbody>
+      {{#each assignments as |assignment|}}
+        <tr>
+          <td class="assignment-info">
+            <div class="assignment-info-content">
+              {{link-to assignment.title (assignment-route-name assignment) assignment class="truncate-text"}}
+              <p>{{t "popularAssignments.classGroup" name=assignment.classGroup.name}}</p>
+            </div>
+          </td>
+          <td class="assignment-actions">
+            {{link-to (t "popularAssignments.reuseAction") (assignment-reuse-route-name assignment) assignment class="btn btn-default"}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{/if}}

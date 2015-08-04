@@ -1,0 +1,103 @@
+$border-color: #cdd1da;
+
+& {
+  cursor: pointer;
+  float: left;
+  width: 100%;
+  display: inline-block;
+  padding: 15px 10px;
+  background-color: #f6f7fb;
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  color: $gray-darker;
+  height: 75px;
+}
+
+&.selected {
+  background-color: $white;
+  border-right-color: $white;
+
+  &:hover {
+    background-color: $white;
+    border-right-color: $white;
+  }
+}
+
+&:hover {
+  background-color: darken(#f6f7fb, 1%);
+}
+
+.submission-name {
+  position: relative;
+  top: -13px;
+}
+
+.submission-grade, .submission-status {
+  float: right;
+}
+
+.submission-grade {
+  min-width: 110px;
+  text-align: left;
+  line-height: 21px;
+  vertical-align: top;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.submission-status {
+  font-size: 32px;
+
+  i:before {
+    content: "\e644";
+    color: $gray-dark;
+  }
+
+  &.submitted {
+    i:before {
+      content: $submitted-glyph;
+      color: $submitted-color;
+    }
+  }
+
+  &.submitted-late {
+    i:before {
+      content: $submitted-late-glyph;
+      color: $submitted-late-color;
+    }
+  }
+
+  &.resubmission {
+    i:before {
+      content: $resubmission-glyph;
+      color: $resubmission-color;
+    }
+  }
+
+  &.not-submitted {
+    i:before {
+      content: $not-submitted-glyph;
+      color: $not-submitted-color;
+    }
+  }
+
+  &.absent {
+    i:before {
+      content: $absent-glyph;
+      color: $absent-color;
+    }
+  }
+}
+
+i {
+  color: $gray-dark;
+
+  &.pe-7s-user {
+    font-size: 44px;
+  }
+
+  &.ti-marker-alt{
+    font-size: 24px;
+  }
+}

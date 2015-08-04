@@ -1,0 +1,18 @@
+.marking-schemes{
+  .table{
+    tr{
+      th{
+        width: 25%;
+        &.second{
+          width: 40%
+        }
+        &.last{
+          width: 10%;
+        }
+      }
+      td{
+        vertical-align: middle;
+      }
+    }
+  }
+}

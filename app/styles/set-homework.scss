@@ -1,0 +1,47 @@
+.panel.panel-set-homework {
+  .panel-body {
+    text-align: center;
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    .set-homework-icon {
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      color: $white;
+      background-color: $brand-success;
+      margin: 0 auto;
+      border-radius: 10px;
+      font-size: 26px;
+      padding-top: 5px;
+
+      &.set-homework-icon-class-test {
+        background-color: $assignment-class-test;
+      }
+
+      &.set-homework-icon-quiz {
+        background-color: $assignment-quiz;
+      }
+
+      &.set-homework-icon-spelling {
+        background-color: $assignment-spelling-test;
+      }
+
+      &.set-homework-icon-differentiated {
+        background-color: $assignment-differentiated;
+      }
+
+      &.set-homework-icon-numeracy {
+        background-color: $assignment-numeracy;
+      }
+    }
+  }
+
+  .panel-footer {
+    padding: 12px;
+    text-align: center;
+    background-color: #f5f7fa;
+  }
+}

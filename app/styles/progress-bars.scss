@@ -1,0 +1,12 @@
+$progress-bar-height: 8px;
+.smhw-progress {
+  border-radius: $progress-bar-height;
+  height: $progress-bar-height;
+  background-color: $gray;
+  overflow: hidden;
+}
+.smhw-progress-bar {
+  background-color: lighten($brand-primary, 20);
+  height: $progress-bar-height;
+  float: left;
+}

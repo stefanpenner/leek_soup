@@ -1,0 +1,43 @@
+& {
+  position: relative;
+}
+.suggestions {
+  list-style: none;
+  border: 1px solid $gray;
+  padding-left: 0;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border-radius: 6px;
+  margin-top: -1px;
+  overflow: hidden;
+  z-index: 200;
+}
+.suggestion {
+  padding: 7px;
+  cursor: pointer;
+  .school-logo {
+    &::before { font-size: 32px; }
+    height: 48px;
+    width: 48px;
+    display: block;
+    float: left;
+  }
+  p { margin: 3px; }
+  .suggested-school-name {
+    font-weight: 600;
+  }
+  &:not(:first-child) {
+    border-top: 1px solid $gray;
+  }
+  &:not(.create-school) {
+    height: 58px;
+  }
+  &:hover, &.active {
+    background-color: $brand-primary;
+    color: $white;
+    em {
+      color: $white;
+    }
+  }
+}

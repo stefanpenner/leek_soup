@@ -1,0 +1,76 @@
+$brand-primary: #0E79C9;
+$brand-success: #8CC152;
+$brand-warning: #f3a100;
+$brand-danger: #da4453;
+$brand-info: #3bafda;
+$gray-light: #e6e9ed;
+$gray-lighter: #f5f7fa;
+$gray-lightest: #fafafa;
+$white: #ffffff;
+$orange: #f3a100;
+$gray: #ccd1d9;
+$black: #000000;
+$gray-dark: #656D78;
+$gray-darker: #333333;
+$font-family-sans-serif: "Open Sans";
+$font-size-base: 13px;
+$facebook-blue: #2E4D7A;
+
+$announcement: #4dc1ea;
+$event: #eb563e;
+
+$grid-columns: 18;
+$grid-gutter-width: 28px;
+
+$brand-button-border-color: darken($brand-primary, 5%);
+$brand-button-active-border-color: darken($brand-primary, 10%);
+
+$assignment-homework: $brand-success;
+$assignment-quiz: $brand-warning;
+$assignment-spelling-test: #37bd9c;
+$assignment-numeracy: #d74454;
+$assignment-differentiated: $brand-primary;
+$assignment-class-test: #967bdc;
+
+
+$state-danger-bg: $brand-danger;
+$state-danger-text: $brand-danger;
+$alert-danger-text: $white;
+$state-danger-border: $brand-danger;
+
+$state-success-bg: $brand-success;
+$state-success-text: $brand-success;
+$alert-success-text: $white;
+$state-success-border: $brand-success;
+
+$state-info-bg: $brand-info;
+$alert-info-text: $white;
+$state-info-border: $brand-info;
+
+
+// Fonts
+$default-font-size: 14px;
+
+// Submissions
+$not-submitted-color: #d84852;
+$not-submitted-glyph: "\e681";
+
+$submitted-color: #8fc053;
+$submitted-glyph: "\e66c";
+
+$submitted-late-color: #5e9b24;
+$submitted-late-glyph: "\e66b";
+
+$resubmission-color: #f1a100;
+$resubmission-glyph: "\e6c2";
+
+$absent-color: #3083d1;
+$absent-glyph: "\e6a7";
+
+// Other colors
+$interactive-game-bg-color: #5c95bc;
+$interactive-game-color: $white;
+$events-color: #E9573E;
+$video-training-color: #5d9cec;
+$mustard: #FECE53;
+$header-bg-color: #f6f7fb;

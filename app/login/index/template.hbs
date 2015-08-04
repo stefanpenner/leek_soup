@@ -1,0 +1,21 @@
+<h4>{{{t 'login.index.header'}}}</h4>
+<form role="form" id="email-login-form" {{action "authenticate" identification password on="submit"}}>
+  {{validated-input id="login-identification" model=this inputClass='input-lg' attribute="identification" value=identification placeholder="Email/Username"}}
+  {{validated-input id="login-password" type="password" model=this inputClass='input-lg' attribute="password" value=password placeholder="Password"}}
+  <div class="actions">
+    <button type="submit" class="btn btn-brand {{if onAir 'loading'}}" disabled={{identityFormDisabled}}>
+      {{unless onAir (t 'login.action')}}
+    </button>
+    {{link-to (t 'login.forgotPassword') 'login.recover' class="forgot-password-link"}}
+  </div>
+</form>
+<hr title={{t 'login.index.pinFormSeparator'}}>
+<form role="form" id="pin-login-form" {{action "authenticateWithPin" pin on="submit"}}>
+  {{validated-input id="login-pin" model=this attribute="pin" value=pin placeholder=(t 'login.enterPin') pattern="[A-Za-z]\d{8}"}}
+  <button type="submit" class="btn btn-brand" disabled={{pinFormDisabled}}>{{t 'login.action'}}</button>
+</form>
+<div class="actions login-providers-buttons">
+  <button class="btn btn-small btn-rm-unify">RM Unify</button>
+  <button class="btn btn-small btn-facebook" {{action 'authenticateWithOauth2' 'facebook-oauth2'}}>Facebook</button>
+  <button class="btn btn-small btn-google" {{action 'authenticateWithOauth2' 'google-oauth2'}}>Google</button>
+</div>

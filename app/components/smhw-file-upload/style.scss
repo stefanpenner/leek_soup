@@ -1,0 +1,29 @@
+.ti-cloud-up {
+  font-size: 60px;
+  display: block;
+}
+
+.drop-area {
+  border: 1px dashed $gray;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.pending-uploads {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.upload-file-name {
+  padding: 5px 10px 5px 0;
+}
+
+&.highlighted {
+  .ti-cloud-up {
+    color: $brand-primary;
+  }
+  .drop-area {
+    border-color: $brand-primary;
+    background-color: aliceblue;
+  }
+}

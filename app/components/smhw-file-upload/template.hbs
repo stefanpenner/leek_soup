@@ -1,0 +1,39 @@
+<div class="well drop-area">
+  {{#if hasPendingUploads}}
+    <table class="pending-uploads">
+      <tbody>
+        {{#each pendingUploads as |upload|}}
+          <tr>
+            {{#if hasManyPendingUploads}}
+              <td class="upload-file-name">{{upload.filename}}</td>
+            {{/if}}
+            <td class="expand">
+              <div class="smhw-progress">
+                <div class="smhw-progress-bar" role="progressbar" aria-valuenow="unknown" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <i class="ti-cloud-up text-center"></i>
+  {{/if}}
+  <p class="text-center">Upload files by dropping them here or select them from:</p>
+  <div class="homework-create text-center">
+    <button class="btn btn-default upload-btn" disabled={{hasPendingUploads}}>
+      <input type="file" multiple>
+      Upload from my computer
+    </button>
+  </div>
+</div>
+{{#if showFileList}}
+  <div class="finished-uploads">
+    {{#each finishedUploads as |item|}}
+      <p class="finished-upload">
+        <a href="{{item.fileUrl}}">{{item.filename}}</a>
+        <i class="ti-trash inline-icon brand-delete-icon" {{action "remove" item}}></i>
+      </p>
+    {{/each}}
+  </div>
+{{/if}}

@@ -1,0 +1,35 @@
+.redactor-box {
+  .redactor-toolbar {
+    z-index: 1;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background-color: $gray-lightest;
+    border-bottom: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .redactor-editor {
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 4px;
+    padding: 10px;
+    border-bottom-right-radius: 4px;
+    em{
+      color: $gray-dark;
+      font-weight: initial;
+      font-style: italic;
+    }
+    strong{
+      em{
+        font-weight: bold;
+      }
+    }
+  }
+
+  &.redactor-box-fullscreen {
+    .redactor-toolbar {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

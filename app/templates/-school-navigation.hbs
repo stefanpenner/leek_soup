@@ -1,0 +1,30 @@
+<nav class="navbar navbar-blue navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">{{t 'schoolNav.toggle'}}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'home' classNames='navbar-brand'}}
+        <img src="/images/smhw-logo-white.png" />
+        <span class="brand-name">Show My Homework</span>
+      {{/link-to}}
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        {{#if currentSchool.homepageActive}}
+          <li>{{#link-to 'school.index'}}{{t 'schoolNav.home'}}{{/link-to}}</li>
+        {{/if}}
+        <li>{{#link-to 'school.calendar'}}{{t 'schoolNav.calendar'}}{{/link-to}}</li>
+      </ul>
+
+      {{#unless session.isAuthenticated}}
+        <ul class="nav navbar-nav pull-right">
+          <li>{{#link-to 'login'}}{{t 'schoolNav.login'}}{{/link-to}}</li>
+        </ul>
+      {{/unless}}
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,13 @@
+<div class="first-panel">
+  <div class="row">
+    <div class="col-md-9">
+      {{validated-input model=model attribute="title" placeholder="Title" labelText="homeworks.title.label" attributeClass="homework-title" value=model.title }}
+    </div>
+    <div class="col-md-9">
+      {{validated-select model=model value=model.purpose content=currentSchool.schoolPrivateInfo.homeworkPurposes optionValuePath="name" optionLabelPath="name" attribute="purpose" labelText="homeworks.purpose.label" class="homework-purpose"}}
+    </div>
+  </div>
+  <div class="form-group">
+    {{validated-rich-text-editor value=model.description model=model attribute="description" }}
+  </div>
+</div>

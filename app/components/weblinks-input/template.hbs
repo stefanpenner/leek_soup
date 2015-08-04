@@ -1,0 +1,14 @@
+<label for="homework-web-links" class="control-label u-margin-Txxs">Add web links (optional)</label>
+<p>e.g. Youtube, MyMaths, BBC</p>
+{{input value=value id="homework-web-links" placeholder="Past URL and press enter to add another" class="form-control"}}
+{{#if hasError}}
+  <label class="control-label u-margin-Txxs" for="homework-web-links">Needs to be a valid URL.</label>
+{{/if}}
+<div class="web-links separator">
+  {{#each model.webLinks as |webLink|}}
+    <p class="web-link">
+      <a href="{{webLink.url}}" class="btn-link" target="_blank">{{truncate webLink.url}}</a>
+      <i class="ti-trash inline-icon brand-delete-icon" {{action "remove" webLink}}></i>
+    </p>
+  {{/each}}
+</div>

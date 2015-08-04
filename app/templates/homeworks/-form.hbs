@@ -1,0 +1,66 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="border-right col-md-12">
+      <form role="form" {{action 'saveRecord' model on="submit"}}>
+        {{partial "assignment-first-panel"}}
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.subjects optionValuePath="name" optionLabelPath="name" labelText="homeworks.subject.label" attribute="subject" class="homework-subject"}}
+          </div>
+          <div class="col-md-9">
+            {{log currentUser.classGroupsByYear}}
+            {{validated-select model=model content=currentUser.classGroupsByYear optionValuePath="" optionLabelPath="name" labelText="homeworks.classGroup.label" attribute="allClassGroups" class="homework-class-group" multiple=model.isNew errors=model.errors.classGroup}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.schoolPrivateInfo.markingSchemesActive optionValuePath="" optionLabelPath="title" labelText="homeworks.markingScheme.label" attribute="markingScheme" class="homework-marking-scheme"}}
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-9">
+                {{smhw-datepicker model=model date=model.issuedOn labelText="homeworks.issuedOn.label" attribute="issuedOn" startDate=startDate class="homework-issued-on"}}
+              </div>
+              <div class="col-sm-9">
+                {{smhw-datepicker model=model date=model.dueOn labelText="homeworks.dueOn.label" attribute="dueOn" dependantAttribute="issuedOn" class="homework-due-on"}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            {{validated-select model=model content=currentSchool.submissionTypes optionValuePath="id" optionLabelPath="text" labelText="homeworks.submissions.label" attribute="submissionType" class="homework-third-party-submission-types"}}
+            <p>{{t 'homeworks.submissions.explanation'}}</p>
+          </div>
+          <div class="col-md-9 {{if (or model.errors.duration model.errors.duration_units) 'has-error'}}">
+            <label class="control-label" for="homework-time-digits">{{t 'homeworks.completionTime.label'}}</label>
+            <div class="completion-time-container">
+              <div class="row">
+                <div class="col-xs-8">
+                  {{input value=model.duration type="number" maxlength="4" max="9999" min="1" class='form-control homework-duration'}}
+                  {{validation-errors errors=model.errors.duration}}
+                </div>
+                <div class="col-xs-10">
+                  {{validated-select model=model content=currentSchool.schoolPrivateInfo.timeSlots optionValuePath="unit" optionLabelPath="unit" attribute="durationUnits" class="homework-unit" }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <label for="attached-file">{{t 'homeworks.attachments.label'}}</label>
+          <p>{{t 'homeworks.attachments.explanation'}}</p>
+          {{smhw-file-upload collection=model.attachments deleteAttachment=(unless model.isNew 'deleteAttachment')}}
+          {{weblinks-input model=model}}
+        </div>
+        <hr>
+        {{partial "assignment-submit" }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      {{popular-assignments type=model.type limit=5}}
+    </div>
+  </div>
+</div>

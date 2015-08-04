@@ -1,0 +1,15 @@
+.panel {
+  border: 1px solid #cdd1da;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  .panel-body {
+    padding: 20px;
+  }
+
+  .panel-footer {
+    padding: 20px;
+    background-color: #f6f7fb;
+    border-top: 1px solid #cdd1da;
+  }
+}

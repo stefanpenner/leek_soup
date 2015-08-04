@@ -1,0 +1,18 @@
+.subject-list{
+  .form-group{
+    &:first-child{
+      margin-right: 10px;
+    }
+  }
+  .table{
+    th{
+      width: 35%;
+      &.first{
+        width: 50%;
+      }
+      &.last{
+        width: 15%;
+      }
+    }
+  }
+}
