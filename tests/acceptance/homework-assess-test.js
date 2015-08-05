@@ -4,9 +4,11 @@ import { module, test } from 'qunit';
 import startApp from 'smhw-frontend/tests/helpers/start-app';
 
 var application, container, teacher;
-
+function Bar() {}
+var bar;
 module('Acceptance | HomeworkAssess', {
   beforeEach: function() {
+    bar = new Bar();
     application = startApp();
     teacher = server.create('employee');
     signIn({ user: teacher, type: 'employee' });
@@ -14,6 +16,8 @@ module('Acceptance | HomeworkAssess', {
 
   afterEach: function() {
     Ember.run(application, 'destroy');
+    server.shutdown();
+    delete window.server;
   }
 });
 

@@ -14,6 +14,8 @@ module('Acceptance | HomeworkShow', {
 
   afterEach: function() {
     Ember.run(application, 'destroy');
+    server.shutdown();
+    window.server = undefined;
   }
 });
 

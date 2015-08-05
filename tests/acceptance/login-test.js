@@ -15,6 +15,8 @@ module('Acceptance | login', {
   afterEach: function() {
     Ember.run(invalidateSession);
     Ember.run(application, 'destroy');
+    server.shutdown();
+    window.server = undefined;
   }
 });
 
